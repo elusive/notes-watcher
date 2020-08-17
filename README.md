@@ -1,4 +1,4 @@
-![Rust Library](docs\rust-image.png)
+![Rust Library](https://github.com/elusive/notes-watcher/blob/master/docs/rust-image.png)
 
 # Notes-Watcher
 > File watcher using rs-notify, when files are added or modified can push the changes to remote.
