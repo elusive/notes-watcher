@@ -1,10 +1,12 @@
+use std::path::PathBuf;
+
 mod watcher;
 
 fn main() {
     // notes directory
-    let notesPath = "/d/Archive/Notes/journal/";
+    let notes_path = "/c/work/Notes/journal/";
 
     println!("Hello Rust Watcher");
 
-    watcher::startWatch(notesPath);
+    watcher::start_watch(PathBuf::from(notes_path));
 }

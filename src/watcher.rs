@@ -1,13 +1,14 @@
+extern crate notify;
+
 use notify::{watcher, RecursiveMode, Watcher};
+use std::path::PathBuf;
 use std::sync::mpsc::channel;
 use std::time::Duration;
 
 pub use notify::Error;
 pub use notify::RawEvent as Event;
 
-pub struct WatcherInstance
-
-pub fn startWatch(path_name: &str) {
+pub fn start_watch(path_name: PathBuf) {
     // create a channel to receive the events
     let (tx, rx) = channel();
 
@@ -17,16 +18,17 @@ pub fn startWatch(path_name: &str) {
 
     // add the path to be watched. all files and folders at that path
     // and below will be monitored for changes.
-    watcher.watch(path_name, RecursiveMode::Recursive).unwrap();
+    println!("path_name: {:?}", path_name);
+    watcher
+        .watch("/c/work/Notes/journal", RecursiveMode::Recursive)
+        .unwrap();
 
     loop {
         match rx.recv() {
-            Ok(event) => println!("{:?}", event),
+            Ok(event) => {
+                println!("{:?}", event);
+            }
             Err(e) => println!("watch error: {:?}", e),
         }
     }
-}
-
-pub fn stopWatch(path_name: &str) {
-    
 }
