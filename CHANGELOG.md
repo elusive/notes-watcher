@@ -1,10 +1,12 @@
 ## 0.0.3 (2020-08-23)
 
 -   FEATURE: Fix path (moved notes to C:\\) in main.
--   FEATURE: Clean up watcher.rs to remove unused struct.
+-   FEATURE: Clean up watcher mod to remove unused struct.
 -   META: Fix edition year value in cargo.toml file.
 -   META: Add launch.json and LLDB debug configuration.
--   Application now runs and outputs watcher events to console!
+-   Application now runs and outputs watcher events to console! [`v0.0.3`]
+
+[`v0.0.3`]: https://github.com/elusive/notes-watcher/tree/v0.0.3
 
 ## 0.0.2 (2020-08-17)
 
